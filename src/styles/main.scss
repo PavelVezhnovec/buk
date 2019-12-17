@@ -8,11 +8,19 @@
 
 $light-color: #fff;
 $accent-color: #65e496;
+$bg-light-color: #f5f6fa;
+$bg-dark-color: #44444f;
 
 
 
 body {
     font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+h3 {
+    font-size: 24px;
 }
 
 .wrap {
@@ -31,6 +39,40 @@ body {
 
 .page {
     padding-top: 161px;
+    padding-bottom: 160px;
+    &_gray {
+    background-color: $bg-light-color;
+    }
+    &__title {
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+    }
+    &__subtitle {
+        color: $accent-color;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 0.9px;
+    }
+}
+
+.page-books {
+    margin-bottom: 150px;
+    margin-top: 157px;
+   &__title {
+       
+       text-align: center;
+       font-size: 48px;
+        
+    }
+    &__subtitle {
+        margin-bottom: 91px;
+        text-align: center;
+        font-size: 18px;
+        color: $accent-color;
+    }
+
 }
 
 .header {
@@ -77,10 +119,13 @@ body {
     &__name {
         font-family: 'Open Sans', serif;
         font-size: 18px;
-        letter-spacing: 0.7px;
-        margin-bottom: 30px;
+        letter-spacing: 0.85px;
+        margin-bottom: 43px;
+        margin-left: 4px;
+        margin-top: 1px;
+
     }
-    &__name-top {
+    &__name_top {
         margin-top: 16px;
         margin-left: 0;
     }
@@ -94,6 +139,9 @@ body {
             display: block;
             color: $accent-color;
             font-size: 18px;
+            padding-top: 23px;
+            letter-spacing: 0.9px;
+            margin-left: 3px;
              }
          }
          &__description {
@@ -118,7 +166,9 @@ body {
             margin-bottom: 19px;
         }
         small {
-            font-family: 'Open Sans', serif; 
+            font-style: italic; 
+            font-size: 12px;
+            letter-spacing: 0.1px;
         }
     
 }
@@ -127,11 +177,38 @@ body {
     justify-content: space-between;
     &-demo {
         display: block;
+        position: relative;
         width: 447px;
         height: 643px;
         background-image: url(../img/book.svg);  
         background-repeat: no-repeat;
        flex-basis: 447px;
+       &__title {
+           text-transform: uppercase;
+           font-size: 36px;
+           letter-spacing: 1.4px;
+           position: absolute;
+           left: 131px;
+           top: 118px;
+           span {   
+            font-family: 'Open Sans', serif;
+            font-size: 14px;
+            color: $accent-color;
+            display: block;
+            text-transform: initial;
+            margin-top: 10px;
+            letter-spacing: 0.7px;
+           }
+       }
+       &__autor {
+            font-family: 'Open Sans', serif;
+            font-size: 14px;
+            color: $accent-color;
+            position: absolute;
+            letter-spacing: 0.7px;
+            bottom: 52px;
+            left: 87px;
+       }
     }
     small {
         font-family: 'Open Sans', sans-serif;
@@ -172,7 +249,110 @@ body {
             font-size: 80px;
             color: $accent-color;
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 45px;
         } 
     }
+}
+
+.block-about {
+    margin-top: 82px;
+    display: flex;
+    justify-content: space-between;
+    h3 {
+        margin-bottom: 20px;
+    }
+    &-text {
+        flex-basis: 41%;
+        &__desc {
+            font-family: 'Open Sans', serif;
+            letter-spacing: 0.6px;  
+        }
+    }
+
+    &-table {
+        
+        flex-basis: 49%;
+        &__btn {
+            
+            border: none;
+            background-color: $accent-color;
+            color: $light-color;
+            text-decoration: none;
+            border-radius: 3px;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 28px;
+            padding: 14px 45px;
+            letter-spacing: 0.7px;
+            margin-bottom: 19px;
+        }
+        &__list {
+            font-family: 'Open Sans', serif;
+            margin: 25px 0 0 0;
+            padding: 0;
+            counter-reset: list;
+            column-count: 2;
+            &>li {
+                position: relative;
+                padding-left: 36px;
+                counter-increment: list;
+                list-style-type: none;
+                margin-bottom: 8px;
+                letter-spacing: 0.7px;
+                &::before {
+                    content: counter(list) ". ";
+                }
+                &::after {
+                    content: "+";
+                    position: absolute;
+                    left: 0;
+                    font-family: 'Open Sans', serif;  
+                    font-size: 15px;
+                    line-height: 22px;
+                    top: 1px;
+                    background-color: #5fc9b6;
+                    color: $light-color;
+                    padding: 0px 7px;
+                }
+                
+            }
+            
+        }
+    }
+    &-social {
+        display: flex;
+        align-items: center;
+        margin-top: 14px;
+        &__title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        &__list {
+            list-style-type: none;
+            padding-left: 23px;
+            &>li {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 12px;
+                font-size: 18px;
+                &>a {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+   
+}
+
+.block-books {
+
+   &-text {
+       display: flex;
+       justify-content: space-between;
+       &__booki {
+        background-image: url(../img/boolin.svg);
+       
+       }
+   }
 }
