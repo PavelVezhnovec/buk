@@ -57,9 +57,7 @@ h3 {
     }
 }
 
-.page-books {
-    margin-bottom: 150px;
-    margin-top: 157px;
+.page {
    &__title {
        
        text-align: center;
@@ -72,7 +70,30 @@ h3 {
         font-size: 18px;
         color: $accent-color;
     }
-
+    &__btn {
+        
+        background: linear-gradient(to top left, #65e49c, #65e4b0);
+        color: $light-color;
+        text-decoration: none;
+        border-radius: 3px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 48px;
+        padding: 14px 45px;
+        letter-spacing: 0.7px; 
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            height: 20px;
+            width: 100%;
+            background-color: #b2f1be;
+            position: absolute;
+            z-index: -1;
+            bottom: -2px;
+            border-radius: 3px;
+        }
+    }
 }
 
 .header {
@@ -346,13 +367,61 @@ h3 {
 }
 
 .block-books {
-
-   &-text {
-       display: flex;
-       justify-content: space-between;
-       &__booki {
-        background-image: url(../img/boolin.svg);
-       
-       }
-   }
+    
+    display: flex;
+    justify-content: space-between ;
+    &-demo {
+            display: block;
+            background-image: url(../img/bookimg.svg);
+            background-repeat: no-repeat;
+            width: 269px;
+            height: 408px;
+            margin-bottom: 37px;
+            margin-left: 69px;
+            position: relative;
+            
+            &__title {
+                text-transform: uppercase;
+                color: $bg-light-color;
+                font-family: 'Roboto Slab', serif;
+                font-size: 24px;
+                padding-left: 76px;
+                padding-top: 75px;
+            }
+            span {
+                font-family: 'Open Sans', serif;
+                display: block;
+                color: $accent-color;
+                font-size: 12px;
+                text-transform: initial;
+                text-align: center;
+                margin-right: 46px;
+            }
+            &__author{
+                font-family: 'Open Sans', serif;
+                color: $accent-color;
+                font-size: 12px;
+                position: absolute;
+                bottom: 20px;
+                left: 81px;
+            }
+    }
+    &-text {
+        text-align: center;
+        font-family: 'Open Sans', serif;
+        padding-bottom: 100px;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        padding-left: 20px;
+        h3 {
+            font-family: 'Roboto Slab', serif;
+            margin-bottom: 23px;
+            font-size: 24px;
+        }
+        a {
+            text-decoration: none;
+            color: $accent-color;
+        }
+    }
+    
 }
