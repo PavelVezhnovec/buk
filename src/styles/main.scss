@@ -27,6 +27,8 @@ h3 {
 .wrap {
     max-width: 1170px;
     margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .page-main {
@@ -41,6 +43,11 @@ h3 {
 .page {
     padding-top: 161px;
     padding-bottom: 160px;
+    @media (max-width: 1020px) {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    position: relative;
     &_gray {
     background-color: $bg-light-color;
     }
@@ -56,9 +63,22 @@ h3 {
         font-size: 18px;
         letter-spacing: 0.9px;
     }
-}
-
-.page {
+    &__svg{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+        min-height: 694px;
+        @media (max-width: 1020px) {
+            display: none;
+        }
+    }
+        &-carousel {
+            @media (max-width: 1020px) {
+                background-color: $bg-dark-color;
+            }
+        }
+    
    &__title {
        
        text-align: center;
@@ -95,8 +115,10 @@ h3 {
     align-items: center;
     max-width: 1170px;
     margin: 0 auto;
-    padding-top: 38px;
-    padding-bottom: 166px;
+    padding: 38px 15px 166px 15px;
+    @media(max-width:920px) {
+        flex-direction: column;
+    }
     &__logo {
         display: block;
         width: 137px;
@@ -130,8 +152,14 @@ h3 {
 
 .block-text {
     flex-basis: calc(93% - 500px);
+    @media(max-width: 1020px) {
+        flex-basis: calc(93% - 315px);
+    }
     &--width {
         flex-basis: calc(93% - 520px);
+    @media(max-width: 1020px) {
+        flex-basis: calc(93% - 315px);
+        }
     }
     &__name {
         font-family: 'Open Sans', serif;
@@ -145,18 +173,21 @@ h3 {
     &__name_top {
         margin-top: 16px;
         margin-left: 0;
+        margin-bottom: 19px;
     }
     &__title {
         font-size: 48px;
+        line-height: 53px;
         font-weight: 700px;
         letter-spacing: 1.8px;
-        margin-bottom: 40px;
+        margin-bottom: 38px;
 
         span {
             display: block;
             color: $accent-color;
             font-size: 18px;
-            padding-top: 23px;
+            line-height: 23px;
+            padding-top: 11px;
             letter-spacing: 0.9px;
             margin-left: 3px;
              }
@@ -282,6 +313,10 @@ h3 {
         position: absolute;
         right: 0;
         z-index: -1;
+        @media(max-width: 1020px) {
+            width: 300px;
+            height: 412px;
+        }
     }
     &__svg--left {
         right: inherit;
@@ -290,6 +325,9 @@ h3 {
     &__img {
         margin-top: 47px;
         margin-right: 44px;
+        @media(max-width: 1020px) {
+            width: 300px;
+        }
     }
     &__img--left {
         margin-top: 49px;
@@ -303,13 +341,19 @@ h3 {
     display: flex;
     justify-content: space-around;
     margin-top: 152px;
+    @media(max-width: 750px) {
+        flex-direction: column;
+    }
     p {
         font-family: 'Open Sans', serif;
-        font-size: 18px; 
+        font-size: 18px;
+        @media(max-width: 750px) {
+            margin-bottom: 80px;
+        } 
         span {
             font-family: 'Roboto Slab', serif; 
             display: block;
-            font-weight: 100;
+            font-weight: 100px;
             font-size: 80px;
             color: $accent-color;
             text-align: center;
@@ -322,19 +366,32 @@ h3 {
     margin-top: 82px;
     display: flex;
     justify-content: space-between;
+    @media (max-width:1020px) {
+        max-width: 750px;
+        margin: 82px auto 0;
+        flex-direction: column;
+    }
     h3 {
         margin-bottom: 20px;
     }
     &-text {
-        flex-basis: 41%;
+        flex-basis: calc(100% - 690px);
+        @media (max-width:1020px) {
+            flex-basis: 100%;
+        }
         &__desc {
             font-family: 'Open Sans', serif;
-            letter-spacing: 0.6px;  
+            letter-spacing: 0.6px;
+              
         }
     }
 
     &-table {     
-        flex-basis: 49%;
+        flex-basis: 570px;
+        @media (max-width:1020px) {
+            flex-basis: 100%;
+            margin-top: 40px;
+        }
         &__btn {
             border: none;
             background: linear-gradient(to top left, #65e49c, #65e4b0);
@@ -350,13 +407,14 @@ h3 {
             box-shadow: 0 -2px #adedbb inset;
         }
             
-        }
+        
         &__list {
             font-family: 'Open Sans', serif;
             margin: 25px 0 0 0;
             padding: 0;
             counter-reset: list;
             column-count: 2;
+            column-gap: 19px;
             &>li {
                 position: relative;
                 padding-left: 36px;
@@ -383,7 +441,7 @@ h3 {
             }
             
         }
-
+    }
 
     &-social {
         display: flex;
@@ -472,16 +530,28 @@ h3 {
 .block-blog {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 900px) {
+        flex-direction: column;
+        max-width: 600px;
+        margin: 85px auto 0;
+    }
+    &-item {
+        flex-basis: 32%;
+        @media (max-width: 900px) {
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+    }
     h4 {
         font-size: 18px;
     }
     &-img {
-        width: 369px;
+        width: 100%;
         height: 224px;
         overflow: hidden;
         position: relative;
         img {
-            width: 369px;
+            width: 100%;
             height: 224px;
             position: absolute;
             left: 50%;
@@ -496,6 +566,7 @@ h3 {
         justify-content: flex-start;
         letter-spacing: 0.8px;
         margin-bottom: 12px;
+        flex-wrap: wrap;
         a {
             color: $accent-color;
             text-decoration: none;
