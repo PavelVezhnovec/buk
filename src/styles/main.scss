@@ -47,6 +47,10 @@ h3 {
         padding-top: 120px;
         padding-bottom: 120px;
     }
+    @media (max-width:480px ) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
     position: relative;
     &_gray {
     background-color: $bg-light-color;
@@ -56,12 +60,20 @@ h3 {
         text-align: center;
         margin-bottom: 25px;
         letter-spacing: 2px;
+        line-height: 1.1;
+        @media (max-width: width 480px) {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
     }
     &__subtitle {
         color: $accent-color;
         text-align: center;
         font-size: 18px;
         letter-spacing: 0.9px;
+        @media (max-width: width 480px) {
+            font-size: 16px;
+        }
     }
     &__svg{
         position: absolute;
@@ -116,6 +128,9 @@ h3 {
     max-width: 1170px;
     margin: 0 auto;
     padding: 38px 15px 166px 15px;
+    @media (max-width: 1020px) {
+        padding: 38px 15px 100px 15px;
+    }
     @media(max-width:920px) {
         flex-direction: column;
     }
@@ -181,6 +196,10 @@ h3 {
         font-weight: 700px;
         letter-spacing: 1.8px;
         margin-bottom: 38px;
+        line-height: 1.1;
+        @media (max-width:480px ) {
+            font-size: 30px;
+        }
 
         span {
             display: block;
@@ -190,7 +209,10 @@ h3 {
             padding-top: 11px;
             letter-spacing: 0.9px;
             margin-left: 3px;
-             }
+            @media (max-width:480px ) {
+                font-size: 16px;
+                }
+            }
          }
          &__description {
             font-family: 'Open Sans', serif;
@@ -212,10 +234,16 @@ h3 {
             padding: 14px 0 15px 0;
             letter-spacing: 0.7px;
             margin-bottom: 19px;
-            box-shadow: 0 -2px #adedbb inset;  
+            box-shadow: 0 -2px #adedbb inset; 
+            @media (max-width: 850px) {
+                margin: 47px auto;
+            } 
         }  
             &__btn--main {
-                box-shadow: 0 -2px #58b988 inset;  
+                box-shadow: 0 -2px #58b988 inset; 
+                @media (max-width:1020px) {
+                    margin: 47px auto 19px;
+                } 
             }
           
         small {
@@ -262,6 +290,10 @@ h3 {
 .block-book {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1020px) {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
     &-demo {
         display: block;
         position: relative;
@@ -270,6 +302,10 @@ h3 {
         background-image: url(../img/book.svg);  
         background-repeat: no-repeat;
        flex-basis: 447px;
+       @media (max-width: 1020px) {
+           flex-basis: 100%;
+           margin: 56px auto 0;
+       }
        &__title {
            text-transform: uppercase;
            font-size: 36px;
@@ -305,10 +341,19 @@ h3 {
 .block-author {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 850px) {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
 }
 
 .block-ava {
     position: relative;
+    @media (max-width: 850px) {
+        position: relative;
+        max-width: 356px;
+        margin: 0 auto 80px;
+    }
     &__svg {
         position: absolute;
         right: 0;
@@ -350,6 +395,9 @@ h3 {
         @media(max-width: 750px) {
             margin-bottom: 80px;
         } 
+        @media (max-width:480px ) {
+            margin-bottom: 45px;
+        }
         span {
             font-family: 'Roboto Slab', serif; 
             display: block;
@@ -358,6 +406,10 @@ h3 {
             color: $accent-color;
             text-align: center;
             margin-bottom: 45px;
+            @media (max-width:480px ) {
+                font-size: 60px;
+                margin-bottom: 29px;
+            }
         } 
     }
 }
@@ -387,7 +439,7 @@ h3 {
     }
 
     &-table {     
-        flex-basis: 570px;
+        flex-basis: 585px;
         @media (max-width:1020px) {
             flex-basis: 100%;
             margin-top: 40px;
@@ -405,6 +457,9 @@ h3 {
             letter-spacing: 0.7px;
             margin-bottom: 19px;
             box-shadow: 0 -2px #adedbb inset;
+            &:focus {
+                outline: none;
+            }
         }
             
         
@@ -415,6 +470,9 @@ h3 {
             counter-reset: list;
             column-count: 2;
             column-gap: 19px;
+            @media (max-width: 630px) {
+                column-count: 1;
+            }
             &>li {
                 position: relative;
                 padding-left: 36px;
@@ -440,6 +498,19 @@ h3 {
                 
             }
             
+        }
+        &__list_next {
+            counter-reset: list 10;
+            position: relative;
+            &::before {
+                content: '';
+                width: 100px;
+                height: 2px;
+                background-color: #5fc9b6;
+                display: block;
+                position: absolute;
+                top: -16px;
+            }
         }
     }
 
@@ -471,7 +542,10 @@ h3 {
 
 .block-books {  
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-around;
+    @media (max-width: 1020px) {
+        flex-direction: column;
+    }
     &-demo {
             display: block;
             background-image: url(../img/bookimg.svg);
@@ -509,12 +583,16 @@ h3 {
             }
     }
     &-text {
+        
         text-align: center;
         font-family: 'Open Sans', serif;
         padding-bottom: 100px;
         font-size: 15px;
         letter-spacing: 0.8px;
         padding-left: 20px;
+        @media (max-width: 1020px) {
+            margin: 0 auto 17px;
+        }
         h3 {
             font-family: 'Roboto Slab', serif;
             margin-bottom: 23px;
@@ -523,6 +601,11 @@ h3 {
         a {
             text-decoration: none;
             color: $accent-color;
+            @media (max-width: 1020px) {
+                display: block;
+                margin: 0 auto 50px;
+                max-width: 120px;
+            }
         }
     }
 }
@@ -590,19 +673,33 @@ h3 {
 .block-letter {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1020px) {
+        flex-direction: column;
+        text-align: center;
+    }
     &-item {
         flex-basis: 49%;
+        @media (max-width: 1020px) {
+            flex-basis: 100%;
+        }
     }
     &__title {
         font-size: 48px; 
         margin-top: 8px;     
         margin-bottom: 23px;
         letter-spacing: 1.9px; 
+        line-height: 1.1;
+        @media (max-width: width 480px) {
+            font-size: 30px;
+        }
     }
     &__text {
         font-size: 15px;
         font-family: 'Open Sans', serif; 
         letter-spacing: 0.75px;
+        @media (max-width: 1020px) {
+            margin-bottom: 40px;
+        }
     }
     &__input {
         width: 100%;
@@ -613,6 +710,9 @@ h3 {
         box-sizing: border-box;
         border-radius: 3px;
         letter-spacing: 0.6px;
+        @media (max-width: 1020px) {
+            max-width: 500px;
+        }
         &:focus {
             outline: none;
         }
@@ -631,6 +731,10 @@ h3 {
         display: block;
         width: 100%;
         border: none;
+        @media (max-width: 1020px) {
+            max-width: 500px;
+            margin: 21px auto 0;
+        }
         &:focus {
             outline: none;
         }
